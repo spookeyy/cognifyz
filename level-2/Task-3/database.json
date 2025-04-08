@@ -1,0 +1,18 @@
+{
+  "submissions": [
+    {
+      "name": "Meshack Pangas",
+      "email": "pangasmeshack@gmail.com",
+      "password": "1234567",
+      "id": "1744097697070",
+      "createdAt": "2025-04-08T07:34:57.070Z"
+    },
+    {
+      "name": "Meshack Kataboi",
+      "email": "pangasmeshack@gmail.com",
+      "password": "123456789",
+      "id": "1744097710157",
+      "createdAt": "2025-04-08T07:35:10.157Z"
+    }
+  ]
+}
