@@ -1,0 +1,25 @@
+{
+  "submissions": [
+    {
+      "name": "parcelpoa",
+      "email": "admin@gmail.com",
+      "password": "1234564",
+      "id": "1744100432208",
+      "createdAt": "2025-04-08T08:20:32.208Z"
+    },
+    {
+      "name": "Meshack Kataboi",
+      "email": "pangasmeshack@gmail.com",
+      "password": "123456754",
+      "id": "1744100445401",
+      "createdAt": "2025-04-08T08:20:45.401Z"
+    },
+    {
+      "name": "Meshack Kataboi Pangas",
+      "email": "store2@gmail.com",
+      "password": "12324343",
+      "id": "1744102467917",
+      "createdAt": "2025-04-08T08:54:27.917Z"
+    }
+  ]
+}
