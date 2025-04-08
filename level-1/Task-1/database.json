@@ -1,0 +1,18 @@
+{
+  "submissions": [
+    {
+      "id": "1744096259999",
+      "name": "parcelpoa",
+      "email": "admin@gmail.com",
+      "password": "1234",
+      "createdAt": "2025-04-08T07:10:59.999Z"
+    },
+    {
+      "id": "1744096275161",
+      "name": "Mathematics",
+      "email": "company@admin.com",
+      "password": "12345",
+      "createdAt": "2025-04-08T07:11:15.161Z"
+    }
+  ]
+}
