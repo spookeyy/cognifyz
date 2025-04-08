@@ -1,0 +1,13 @@
+<%- include('layout', { 
+  title: 'Error',
+  body: `
+    <div class="container mt-5">
+      <div class="alert alert-danger">
+        <h2 class="alert-heading">An Error Occurred</h2>
+        <p><%= error %></p>
+        <hr>
+        <a href="/" class="btn btn-outline-danger">Return to Home</a>
+      </div>
+    </div>
+  `
+}) -%>

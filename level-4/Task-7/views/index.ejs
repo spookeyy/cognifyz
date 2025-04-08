@@ -1,0 +1,67 @@
+<%- include('layout', { title: 'Advanced API Integration' }) -%>
+
+<div class="row">
+  <div class="col-md-8 mx-auto text-center">
+    <h1 class="display-4 mb-4">Welcome to Advanced API Integration</h1>
+    <p class="lead mb-4">
+      This application demonstrates advanced API usage including OAuth authentication, 
+      external API integration, and rate limiting with MongoDB.
+    </p>
+    
+    <div class="card shadow-sm mb-4">
+      <div class="card-body">
+        <h2 class="h4 mb-3">Features</h2>
+        <ul class="list-unstyled">
+          <li class="mb-2">✅ Secure OAuth 2.0 authentication flow</li>
+          <li class="mb-2">🔒 External API integration with token management</li>
+          <li class="mb-2">📊 MongoDB-backed rate limiting</li>
+          <li class="mb-2">📱 Responsive design with Bootstrap 5</li>
+          <li class="mb-2">🚀 Clean architecture with separated concerns</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="d-grid gap-3 d-sm-flex justify-content-sm-center">
+      <a href="/external-api" class="btn btn-primary btn-lg px-4 gap-3">
+        Try API Demo
+      </a>
+      <a href="https://github.com/your-repo" target="_blank" class="btn btn-outline-secondary btn-lg px-4">
+        View on GitHub
+      </a>
+    </div>
+
+    <div class="mt-5 pt-4 border-top">
+      <h3 class="h5 mb-3">Technical Stack</h3>
+      <div class="d-flex flex-wrap justify-content-center gap-3">
+        <span class="badge bg-primary">Express.js</span>
+        <span class="badge bg-success">MongoDB</span>
+        <span class="badge bg-danger">EJS</span>
+        <span class="badge bg-warning text-dark">OAuth 2.0</span>
+        <span class="badge bg-info text-dark">REST API</span>
+        <span class="badge bg-dark">Bootstrap 5</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  /* Custom styles specific to the home page */
+  .display-4 {
+    font-weight: 300;
+    line-height: 1.2;
+  }
+  .lead {
+    font-size: 1.25rem;
+    font-weight: 300;
+  }
+  .card {
+    transition: transform 0.2s;
+  }
+  .card:hover {
+    transform: translateY(-5px);
+  }
+  .badge {
+    font-size: 0.9rem;
+    padding: 0.5em 0.75em;
+  }
+</style>
