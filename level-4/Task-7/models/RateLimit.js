@@ -1,4 +1,3 @@
-// models/RateLimit.js
 const mongoose = require("mongoose");
 
 const rateLimitSchema = new mongoose.Schema(

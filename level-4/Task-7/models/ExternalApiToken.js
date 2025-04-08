@@ -8,7 +8,6 @@ const externalApiTokenSchema = new mongoose.Schema({
   createdAt: { type: Date, default: Date.now, expires: "7d" }, // Auto-delete after 7 days
 });
 
-// Add method to check token validity
 externalApiTokenSchema.methods.isValid = function () {
   return (
     this.valid && Date.now() < this.createdAt.getTime() + this.expiresIn * 1000
