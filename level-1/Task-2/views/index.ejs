@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced Form</title>
+    <script>
+        // Simple client-side validation
+        function validateForm() {
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            let isValid = true;
+
+            // Reset error styles
+            document.querySelectorAll('.error').forEach(el => {
+                el.style.display = 'none';
+            });
+
+            // Name validation
+            if (name.length < 2) {
+                document.getElementById('name-error').style.display = 'block';
+                isValid = false;
+            }
+
+            // Email validation
+            if (!/^\S+@\S+\.\S+$/.test(email)) {
+                document.getElementById('email-error').style.display = 'block';
+                isValid = false;
+            }
+
+            // Password validation
+            if (password.length < 6) {
+                document.getElementById('password-error').style.display = 'block';
+                isValid = false;
+            }
+
+            return isValid;
+        }
+    </script>
+</head>
+<body style="font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px;">
+    <h1 style="color: #2c3e50;">User Registration</h1>
+    
+    <% if (req.query.success) { %>
+        <div style="background: #d4edda; color: #155724; padding: 10px; margin-bottom: 20px; border-radius: 4px;">
+            Registration successful!
+        </div>
+    <% } %>
+
+    <form action="/submit" method="POST" onsubmit="return validateForm()" style="background: #f8f9fa; padding: 20px; border-radius: 8px;">
+        <div style="margin-bottom: 15px;">
+            <label for="name" style="display: block; margin-bottom: 5px; font-weight: bold;">Name:</label>
+            <input 
+                type="text" 
+                id="name" 
+                name="name" 
+                value="<%= formData ? formData.name : '' %>"
+                style="width: 100%; padding: 8px; border: 1px solid #ced4da; border-radius: 4px;"
+            >
+            <div id="name-error" class="error <%= errors && errors.name ? 'visible' : 'hidden' %>" style="color: #dc3545;">
+                <%= errors && errors.name ? errors.name : 'Name is required' %>
+            </div>
+            <style>
+                .error.hidden { display: none; }
+                .error.visible { display: block; }
+            </style>
+        </div>
+        
+        <div style="margin-bottom: 15px;">
+            <label for="email" style="display: block; margin-bottom: 5px; font-weight: bold;">Email:</label>
+            <input 
+                type="email" 
+                id="email" 
+                name="email" 
+                value="<%= formData ? formData.email : '' %>"
+                style="width: 100%; padding: 8px; border: 1px solid #ced4da; border-radius: 4px;"
+            >
+            <div id="email-error" class="error <%= errors && errors.email ? 'visible' : 'hidden' %>" style="color: #dc3545;">
+                <%= errors && errors.email ? errors.email : 'Valid email required' %>
+            </div>
+        </div>
+        
+        <div style="margin-bottom: 15px;">
+            <label for="password" style="display: block; margin-bottom: 5px; font-weight: bold;">Password:</label>
+            <input 
+                type="password" 
+                id="password" 
+                name="password" 
+                style="width: 100%; padding: 8px; border: 1px solid #ced4da; border-radius: 4px;"
+            >
+            <div id="password-error" class="error <%= errors && errors.password ? 'visible' : 'hidden' %>" style="color: #dc3545;">
+                <%= errors && errors.password ? errors.password : 'Password must be 6+ characters' %>
+            </div>
+        </div>
+        
+        <button 
+            type="submit" 
+            style="background: #28a745; color: white; padding: 10px 15px; border: none; border-radius: 4px; cursor: pointer;"
+        >
+            Register
+        </button>
+    </form>
+
+    <% if (submissions && submissions.length > 0) { %>
+        <h2 style="color: #2c3e50; margin-top: 30px;">Recent Registrations</h2>
+        <ul style="list-style: none; padding: 0;">
+            <% submissions.slice().reverse().slice(0, 5).forEach(sub => { %>
+                <li style="background: #e9ecef; padding: 10px; margin-bottom: 5px; border-radius: 4px;">
+                    <strong><%= sub.name %></strong> (<%= sub.email %>)
+                    <span style="color: #6c757d; font-size: 0.9em; float: right;">
+                        <%= new Date(sub.createdAt).toLocaleDateString() %>
+                    </span>
+                </li>
+            <% }); %>
+        </ul>
+    <% } %>
+</body>
+</html>
